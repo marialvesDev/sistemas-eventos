@@ -15,14 +15,9 @@ public class Main {
         ArrayList<Evento> eventos = new ArrayList<>();
         ArrayList<Evento> eventosConfirmados = new ArrayList<>();
 
-        // O QUE ESSE CODIGO FAZ?
-        //FileReader → abre o arquivo
-        // Scanner → lê linha por linha
-        //split(";") → separa os dados
-        //cria Evento → igual eu fiz
-        //adiciona na lista
+    
 
-        try {
+       try {
             FileReader reader = new FileReader("events.data");
             Scanner leitor = new Scanner(reader);
 
@@ -47,7 +42,7 @@ public class Main {
             System.out.println("Nenhum arquivo encontrado.");
         }
 
-        // CADASTRO DO USUARIO
+        
         System.out.println("Digite seu nome:");
         String nome = scanner.nextLine();
 
@@ -81,7 +76,7 @@ public class Main {
 
             opcao = Integer.parseInt(scanner.nextLine());
 
-            // CRIAR EVENTO
+            
             if (opcao == 1) {
 
                 System.out.println("\nDigite o nome do evento:");
@@ -140,7 +135,7 @@ public class Main {
                 Evento evento = new Evento(nomeDoEvento, endereco, categoria, horario, descricao);
                 eventos.add(evento);
 
-                // SALVAR NO ARQUIVO
+                
                 try {
                     FileWriter writer = new FileWriter("events.data", true);
 
@@ -159,7 +154,7 @@ public class Main {
                 System.out.println("Evento criado com sucesso!");
             }
 
-            // VER EVENTOS
+            
 
 
             else if (opcao == 2) {
@@ -182,7 +177,7 @@ public class Main {
                 }
             }
 
-            // PARTICIPAR
+            
             else if (opcao == 3) {
 
                 if (eventos.isEmpty()) {
@@ -200,7 +195,7 @@ public class Main {
                 }
             }
 
-            // MEUS EVENTOS
+            
             else if (opcao == 4) {
 
                 if (eventosConfirmados.isEmpty()) {
@@ -213,7 +208,7 @@ public class Main {
                 }
             }
 
-            // CANCELAR
+            
             else if (opcao == 5) {
 
                 if (eventosConfirmados.isEmpty()) {
